@@ -1,6 +1,16 @@
 <mat-toolbar>
   <mat-icon aria-hidden="true">shield</mat-icon>
   <span class="title">Pendragon CoA</span>
+  <span class="spacer"></span>
+  @let dark = theme.scheme() === 'dark';
+  <button
+    mat-icon-button
+    (click)="theme.toggle()"
+    [attr.aria-label]="dark ? 'Switch to light mode' : 'Switch to dark mode'"
+    [matTooltip]="dark ? 'Light mode' : 'Dark mode'"
+  >
+    <mat-icon>{{ dark ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>
 </mat-toolbar>
 
 <main>
